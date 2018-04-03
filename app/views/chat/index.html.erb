@@ -13,6 +13,11 @@
   var ws_rails = new WebSocketRails("localhost:3000/websocket");
 
   // 受信時の処理
+  ws_rails.bind("websocket_chat", function(message){
+    var message_list = document.createElement("li");
+    message_list.textContent = message;
+    document.getElementById("chat_area").appendChild(message_list);
+  })
 
   // 送信時の処理
 </script>

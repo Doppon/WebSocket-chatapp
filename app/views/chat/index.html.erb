@@ -20,4 +20,8 @@
   })
 
   // 送信時の処理
+  document.getElementById("send").onclick = function(){
+    var comment = document.getElementById("comment").value;
+    ws_rails.trigger("websocket_chat", comment);
+  }
 </script>
